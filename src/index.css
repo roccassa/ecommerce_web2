@@ -37,6 +37,27 @@ a {
   color: #fff;
 }
 
+input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.grid-productos{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
 /* Encabezado */
 .encabezado {
   background: #111827;
@@ -73,6 +94,13 @@ a {
   opacity: 1;
   font-weight: 600;
   text-decoration: underline;
+}
+
+.encabezado__contador{
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #2563eb;
 }
 
 /* Tarjeta de producto */
@@ -123,6 +151,17 @@ a {
   justify-content: space-between;
   font-size: 0.85rem;
   color: #6b7280;
+}
+
+.cargando,
+.mensaje-error,
+.sin-resultados{
+  text-align: center;
+  padding: 48px 16px;
+}
+
+.mensaje-error{
+  color: #dc2626
 }
 
 /* Página 404 */
