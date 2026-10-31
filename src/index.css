@@ -174,3 +174,43 @@ input{
   font-size: 4rem;
   margin: 0;
 }
+
+/* Catálogo */
+.catalogo__controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.catalogo__resumen {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.buscador {
+  display: flex;
+  flex: 1 1 320px;
+  gap: 8px;
+}
+
+.buscador .boton {
+  border: none;
+  cursor: pointer;
+}
+
+.filtro-categoria {
+  flex: 0 1 240px;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .filtro-categoria {
+    flex: 1 1 100%;
+  }
+}
