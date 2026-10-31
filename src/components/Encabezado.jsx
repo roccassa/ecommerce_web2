@@ -1,6 +1,9 @@
 import { Link, NavLink } from 'react-router-dom'
+import { useCarrito } from '../hooks/useCarrito'
 
 function Encabezado() {
+  const { cantidadTotal } = useCarrito()
+
   return (
     <header className="encabezado">
       <div className="encabezado__contenido">
@@ -13,7 +16,9 @@ function Encabezado() {
             Inicio
           </NavLink>
           <NavLink to="/productos">Productos</NavLink>
-          <NavLink to="/carrito">Carrito</NavLink>
+          <NavLink to="/carrito">Carrito
+          <span className="encabezado__contador">{cantidadTotal}</span>
+          </NavLink>
           <NavLink to="/login">Iniciar sesión</NavLink>
         </nav>
       </div>
