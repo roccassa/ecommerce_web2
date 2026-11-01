@@ -214,3 +214,190 @@ input{
     flex: 1 1 100%;
   }
 }
+
+/* Detalle de producto */
+.boton--secundario {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.detalle__regresar {
+  margin-bottom: 20px;
+}
+
+.detalle__principal {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.detalle__categoria {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
+.detalle__nombre {
+  margin: 4px 0;
+}
+
+.detalle__marca,
+.detalle__datos {
+  margin: 4px 0;
+  color: #6b7280;
+}
+
+.detalle__precios {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.detalle__precio {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.detalle__precio-original {
+  color: #6b7280;
+}
+
+.detalle__descuento {
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Galería */
+.galeria__principal {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #f3f4f6;
+  border-radius: 12px;
+}
+
+.galeria__miniaturas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.galeria__miniatura {
+  width: 64px;
+  height: 64px;
+  padding: 2px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f3f4f6;
+  cursor: pointer;
+}
+
+.galeria__miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.galeria__miniatura--activa {
+  border-color: #2563eb;
+}
+
+/* Compra */
+.compra__controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.compra__controles .boton {
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.compra__aviso {
+  margin-top: 16px;
+  color: #b91c1c;
+}
+
+.compra__confirmacion {
+  margin: 12px 0 0;
+  color: #15803d;
+}
+
+.selector-cantidad {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.selector-cantidad button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.selector-cantidad button:disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.selector-cantidad span {
+  min-width: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Reseñas */
+.resenas {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resenas__item {
+  padding: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.resenas__encabezado {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.resenas__comentario {
+  margin: 8px 0;
+}
+
+.resenas__fecha,
+.resenas__vacio {
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .detalle__principal {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}
