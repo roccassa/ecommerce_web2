@@ -63,9 +63,15 @@ function construirParametros({ limit, skip, sortBy, order } = {}) {
   return parametros
 }
 
-// Hace la petición GET y lanza un error si la respuesta no es exitosa
+// Hace la petición GET y lanza un error si no hay conexión o la respuesta no es exitosa
 async function obtenerJson(url) {
-  const respuesta = await fetch(url)
+  let respuesta
+
+  try {
+    respuesta = await fetch(url)
+  } catch {
+    throw new Error('No se pudo conectar. Revisa tu internet e intenta de nuevo.')
+  }
 
   if (!respuesta.ok) {
     throw new Error(`Error ${respuesta.status} al consultar la API`)
