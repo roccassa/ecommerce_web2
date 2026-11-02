@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import TarjetaProducto from '../components/TarjetaProducto'
-import Cargando from '../components/MensajeError'
+import Cargando from '../components/Cargando'
 import { useProductos } from '../hooks/useProductos'
 import MensajeError from '../components/MensajeError'
 

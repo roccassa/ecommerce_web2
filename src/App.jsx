@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
+import RutaProtegida from './components/RutaProtegida'
 import Inicio from './pages/Inicio'
 import Catalogo from './pages/Catalogo'
 import Detalle from './pages/Detalle'
@@ -18,7 +19,14 @@ function App() {
         <Route path="/producto/:id" element={<Detalle />} />
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/mi-cuenta" element={<MiCuenta />} />
+        <Route
+          path="/mi-cuenta"
+          element={
+            <RutaProtegida>
+              <MiCuenta />
+            </RutaProtegida>
+          }
+        />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<NoEncontrada />} />
       </Route>
