@@ -5,11 +5,12 @@ function MensajeError({ mensaje, onReintentar }) {
         <div className="mensaje-error">
         <p>{mensaje}</p>
       <button
-        className="boton"
-        onClick={onReintentar}
-        style={{ border: 'none', cursor: 'pointer' }}>
-            <Reintentar></Reintentar>
-            </button>
+  className="boton"
+  onClick={onReintentar}
+  style={{ border: 'none', cursor: 'pointer' }}
+>
+  Reintentar
+</button>
             </div>
     )
 }
