@@ -707,3 +707,50 @@ input{
   margin-bottom: 20px;
   padding: 0;
 }
+
+/* Presentación de Inicio: texto a la izquierda e imagen a la derecha */
+.inicio__presentacion {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 32px;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.inicio__texto h1 {
+  margin: 0 0 4px;
+}
+
+.presentacion{
+  text-align: justify;
+}
+
+.inicio__subtitulo {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.inicio__texto .boton {
+  margin-top: 8px;
+}
+
+.inicio__imagen {
+  justify-self: center;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .inicio__presentacion {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}
