@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import Layout from './components/Layout'
+import Plantilla from './components/Plantilla'
 import RutaProtegida from './components/RutaProtegida'
 import Inicio from './pages/Inicio'
 import Catalogo from './pages/Catalogo'
@@ -13,7 +13,7 @@ import NoEncontrada from './pages/NoEncontrada'
 function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
+      <Route element={<Plantilla />}>
         <Route path="/" element={<Inicio />} />
         <Route path="/productos" element={<Catalogo />} />
         <Route path="/producto/:id" element={<Detalle />} />

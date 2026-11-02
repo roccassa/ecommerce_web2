@@ -40,11 +40,18 @@ export async function iniciarSesion(usuario, contrasena) {
     return adaptarUsuario(usuarioLocal)
   }
 
-  const respuesta = await fetch(URL_LOGIN, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username: usuario, password: contrasena }),
-  })
+  let respuesta
+
+  // fetch solo falla aquí cuando no hay conexión; las respuestas con error se revisan abajo
+  try {
+    respuesta = await fetch(URL_LOGIN, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: usuario, password: contrasena }),
+    })
+  } catch {
+    throw new Error('No se pudo conectar. Revisa tu internet e intenta de nuevo.')
+  }
 
   // La API responde 400 cuando las credenciales son incorrectas
   if (respuesta.status === 400 || respuesta.status === 401) {

@@ -701,3 +701,9 @@ input{
     grid-row: 1;
   }
 }
+
+/* Error de categorías: más compacto que el error de una página completa */
+.catalogo__error-categorias .mensaje-error {
+  margin-bottom: 20px;
+  padding: 0;
+}

@@ -23,12 +23,12 @@ function Inicio() {
   }
 
   return (
-    <section className="Inicio">
+    <section className="inicio">
       <div style={{ textAlign: 'center', padding: '48px 16px'}}>
-        <h1>Bienvenido a Techstore Pro</h1>
-        <p>Productos tecnologicos y mas</p>
+        <h1>Bienvenido a TechStore Pro</h1>
+        <p>Productos tecnológicos y más</p>
         <Link to="/productos" className="boton">
-        Ver articulos
+        Ver artículos
         </Link>
       </div>
 

@@ -22,7 +22,12 @@ function Catalogo() {
   //Ordenamiento
   const [sortBy, order] = orden ? orden.split('-') : [undefined, undefined]
 
-  const { categorias, cargando: cargandoCategorias } = useCategorias()
+  const {
+    categorias,
+    cargando: cargandoCategorias,
+    error: errorCategorias,
+    reintentar: reintentarCategorias,
+  } = useCategorias()
   const { productos, total, cargando, error, reintentar } = useProductos({
     texto: busqueda,
     categoria,
@@ -59,7 +64,11 @@ function Catalogo() {
     if (cargando) return <Cargando />
     if (error) return <MensajeError mensaje={error} onReintentar={reintentar} />
     if (productos.length === 0) {
-      return <SinResultados mensaje={`No encontramos productos para "${busqueda}".`} />
+      const mensaje = busqueda
+        ? `No encontramos productos para "${busqueda}".`
+        : 'No hay productos disponibles.'
+
+      return <SinResultados mensaje={mensaje} />
     }
 
     return (
@@ -91,10 +100,20 @@ function Catalogo() {
           categorias={categorias}
           valor={categoria}
           onCambiar={manejarCategoria}
-          deshabilitado={cargandoCategorias}
+          cargando={cargandoCategorias}
         />
         <SelectorOrden valor={orden} onCambiar={manejarOrden} />
       </div>
+
+      {/* Si fallan las categorías los productos siguen visibles: son peticiones independientes */}
+      {errorCategorias && (
+        <div className="catalogo__error-categorias">
+          <MensajeError
+            mensaje="No se pudieron cargar las categorías."
+            onReintentar={reintentarCategorias}
+          />
+        </div>
+      )}
 
       {renderizarProductos()}
     </section>

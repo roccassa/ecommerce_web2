@@ -1,14 +1,14 @@
 // Selector de categoría; recibe las categorías ya cargadas y avisa al padre cuando cambia
-function FiltroCategoria({ categorias, valor, onCambiar, deshabilitado = false }) {
+function FiltroCategoria({ categorias, valor, onCambiar, cargando = false }) {
   return (
     <select
       className="filtro-categoria"
       value={valor}
       onChange={(evento) => onCambiar(evento.target.value)}
-      disabled={deshabilitado}
+      disabled={cargando}
       aria-label="Filtrar por categoría"
     >
-      <option value="">Todas las categorías</option>
+      <option value="">{cargando ? 'Cargando categorías...' : 'Todas las categorías'}</option>
       {categorias.map((categoria) => (
         <option key={categoria.id} value={categoria.id}>
           {categoria.nombre}

@@ -1,12 +1,12 @@
 function Paginacion({ paginaActual, totalPaginas, onCambiar }){
-    const styleBoton = (deshabilitado)=> ({
+    const estiloBoton = (deshabilitado)=> ({
         border: 'none',
         cursor: deshabilitado ? 'not-allowed' : 'pointer',
         opacity: deshabilitado ? 0.5 : 1,
     })
 
-    const Primera = paginaActual <= 1
-    const Ultima = paginaActual >= totalPaginas
+    const esPrimera = paginaActual <= 1
+    const esUltima = paginaActual >= totalPaginas
     return(
         <nav className="paginacion"
         style={{
@@ -19,20 +19,20 @@ function Paginacion({ paginaActual, totalPaginas, onCambiar }){
         >
             <button className="boton"
             onClick={() => onCambiar(paginaActual - 1)}
-            disabled={Primera}
-            style={styleBoton(Primera)}
+            disabled={esPrimera}
+            style={estiloBoton(esPrimera)}
             >
                 Anterior
             </button>
 
             <span>
-                Pagina {paginaActual} de {totalPaginas}
+                Página {paginaActual} de {totalPaginas}
             </span>
 
             <button className="boton"
             onClick={() => onCambiar(paginaActual + 1)}
-            disabled={Ultima}
-            style={styleBoton(Ultima)}
+            disabled={esUltima}
+            style={estiloBoton(esUltima)}
             >
                 Siguiente
                 </button>
