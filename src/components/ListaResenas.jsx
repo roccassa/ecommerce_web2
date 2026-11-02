@@ -6,8 +6,9 @@ function ListaResenas({ resenas }) {
 
   return (
     <ul className="resenas">
-      {resenas.map((resena) => (
-        <li key={`${resena.autor}-${resena.fecha}`} className="resenas__item">
+      {/* La API no da id a las reseñas y puede repetir autor y fecha; la lista nunca se reordena */}
+      {resenas.map((resena, indice) => (
+        <li key={indice} className="resenas__item">
           <div className="resenas__encabezado">
             <strong>{resena.autor}</strong>
             <span>★ {resena.calificacion}</span>

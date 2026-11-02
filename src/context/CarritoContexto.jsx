@@ -32,7 +32,7 @@ export function CarritoProvider({ children }){
             if(existe){
                 return actuales.map((item)=>
                 item.id === producto.id
-            ? { ...item, cantidad: item.cantidad + cantidad}
+            ? { ...item, cantidad: item.cantidad + cantidad, stock: producto.stock}
         :item
             )
             }
@@ -44,17 +44,20 @@ export function CarritoProvider({ children }){
                     nombre: producto.nombre,
                     precio: producto.precio,
                     imagen: producto.imagen,
+                    stock: producto.stock,
                     cantidad,
                 },
             ]
         })
     }
 
-    //Suma 1 a la cantidad de un producto
+    //Suma 1 a la cantidad de un producto, sin pasarse del stock
   function aumentar(id) {
     setItems((actuales) =>
       actuales.map((item) =>
-        item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
+        item.id === id && item.cantidad < (item.stock ?? Infinity)
+          ? { ...item, cantidad: item.cantidad + 1 }
+          : item
       )
     )
   }
