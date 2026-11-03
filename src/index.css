@@ -23,7 +23,16 @@ a {
   text-decoration: none;
 }
 
+/* El contenido ocupa el espacio libre para que el pie quede siempre al final */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .contenedor {
+  flex: 1;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px 16px;
@@ -516,6 +525,16 @@ input{
     justify-self: end;
   }
 }
+
+/* Pie de Página */
+.pie-pagina{
+  background: #111827;
+  color: #fff;
+  margin-bottom: 0 auto;
+  padding: 4px 0;
+  text-align: center;
+}
+
 
 /* Sesión en el encabezado */
 .encabezado__salir {
