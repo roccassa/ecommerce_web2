@@ -3,7 +3,7 @@
 const URL_LOGIN = 'https://dummyjson.com/auth/login'
 
 // Usuarios de prueba propios de la app: edwin no existe en DummyJSON y la API no permite
-// crear usuarios (POST /users/add solo simula), así que estos se validan aquí, sin petición
+// crear usuarios
 const USUARIOS_LOCALES = [
   {
     username: 'edwin',
@@ -42,7 +42,7 @@ export async function iniciarSesion(usuario, contrasena) {
 
   let respuesta
 
-  // fetch solo falla aquí cuando no hay conexión; las respuestas con error se revisan abajo
+  // fetch solo falla aquí cuando no hay conexión
   try {
     respuesta = await fetch(URL_LOGIN, {
       method: 'POST',

@@ -4,7 +4,7 @@ function SinResultados({ mensaje }){
     return(
         <div className="sin-resultados">
             <p>{mensaje}</p>
-            </div>
+        </div>
     )
 }
 

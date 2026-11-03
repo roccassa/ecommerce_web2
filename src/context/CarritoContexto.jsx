@@ -33,8 +33,8 @@ export function CarritoProvider({ children }){
                 return actuales.map((item)=>
                 item.id === producto.id
             ? { ...item, cantidad: item.cantidad + cantidad, stock: producto.stock}
-        :item
-            )
+            :item
+                )
             }
 
             return[

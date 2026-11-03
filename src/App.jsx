@@ -19,8 +19,7 @@ function App() {
         <Route path="/producto/:id" element={<Detalle />} />
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/mi-cuenta"
+        <Route path="/mi-cuenta"
           element={
             <RutaProtegida>
               <MiCuenta />

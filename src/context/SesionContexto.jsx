@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { iniciarSesion as iniciarSesionApi } from '../services/authService'
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const SesionContexto = createContext(null)
 
 const CLAVE_ALMACENAMIENTO = 'sesion'

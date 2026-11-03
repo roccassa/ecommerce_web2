@@ -1,7 +1,7 @@
 // Lista de reseñas de un producto, ya adaptadas por productosService
 function ListaResenas({ resenas }) {
   if (resenas.length === 0) {
-    return <p className="resenas__vacio">Este producto todavía no tiene reseñas.</p>
+    return <p className="resenas__vacio">Este producto aún no tiene reseñas.</p>
   }
 
   return (

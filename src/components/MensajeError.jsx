@@ -2,17 +2,17 @@
 
 function MensajeError({ mensaje, onReintentar }) {
     return(
-        <div className="mensaje-error">
+      <div className="mensaje-error">
         <p>{mensaje}</p>
-      <button
-  className="boton"
-  onClick={onReintentar}
-  style={{ border: 'none', cursor: 'pointer' }}
->
-  Reintentar
-</button>
-            </div>
+        <button
+          className="boton"
+          onClick={onReintentar}
+          style={{ border: 'none', cursor: 'pointer' }}
+        >
+          Reintentar
+        </button>
+      </div>
     )
-}
+  }
 
 export default MensajeError

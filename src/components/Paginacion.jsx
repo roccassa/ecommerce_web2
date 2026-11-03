@@ -8,15 +8,7 @@ function Paginacion({ paginaActual, totalPaginas, onCambiar }){
     const esPrimera = paginaActual <= 1
     const esUltima = paginaActual >= totalPaginas
     return(
-        <nav className="paginacion"
-        style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '16px',
-        marginTop: '24px',  
-        }}
-        >
+        <nav className="paginacion">
             <button className="boton"
             onClick={() => onCambiar(paginaActual - 1)}
             disabled={esPrimera}

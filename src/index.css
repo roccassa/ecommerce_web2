@@ -747,6 +747,16 @@ input{
   border-radius: 12px;
 }
 
+.paginacion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;       
+}
+
+
+
 @media (max-width: 768px) {
   .inicio__presentacion {
     grid-template-columns: minmax(0, 1fr);
